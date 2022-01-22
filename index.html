@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Word Breaker</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="./js/dataset.js"></script>
+  <script src="./js/core.js"></script>
+</head>
+<body>
+  <header>
+    <div class="logo">Word Breaker</div>
+  </header>
+  <section class="main-section">
+    <h1>Шаг 1. Введите известные буквы</h1>
+    <div class="famousSymbol">
+      <input type="text" id="s1">
+      <input type="text" id="s2">
+      <input type="text" id="s3">
+      <input type="text" id="s4">
+      <input type="text" id="s5">
+    </div>
+    <h1>Шаг 2. Настройка фильтров</h1>
+    <p><label for="excludeSymbols">Буквы не должны быть в строке (через пробел)</label>
+      <br/>
+      <input type="text" id="excludeSymbols">
+    </p>
+    <p><label for="includeSymbols">Буквы должны быть в строке (через пробел)</label>
+      <br/>
+      <input type="text" id="includeSymbols">
+    </p>
+    
+    <p>
+    <input type="checkbox" id="excludeSpecSymbols" checked> <label for="excludeSpecSymbols">Исключить спецсимволы</label>  
+    </p>
+    <p>
+    <input type="checkbox" id="excludeShorts" checked> <label for="excludeShorts">Исключить аббревиатуры</label> 
+    </p>
+    <button id="buttonFind">Найти</button>
+    <br />
+    <div class="resultBlock">
+      <h3>Найденные слова</h3>
+      <textarea id="filteredTextarea"></textarea>
+    </div>
+  </section>
+
+  <footer>&copy; 2022 design by <a href="https://github.com/maxkrasiloff">max_krasiloff</a></footer>
+</body>
+</html>
