@@ -14,6 +14,7 @@ const findAllSymbols = () => {
   const includeSymbols = document.getElementById('includeSymbols').value.toLowerCase().trim().split(' ');
   const excludeSpecSymbols = document.getElementById('excludeSpecSymbols').checked;
   const excludeShorts = document.getElementById('excludeShorts').checked;
+  const consonantsCount = +document.getElementById('consonants').value;
   let result = dataset;
   
   if (excludeShorts) {
@@ -39,7 +40,6 @@ const findAllSymbols = () => {
     })
   }
 
-
   if (symbol1) {
     result = result.filter( (word) => findSymbol(word, symbol1, 0));
   }
@@ -54,6 +54,19 @@ const findAllSymbols = () => {
   }
   if (symbol5) {
     result = result.filter( (word) => findSymbol(word, symbol5, 4));
+  }
+
+  if (consonantsCount) {
+    consonantsArray = ['й', 'ц', 'к', 'н', 'г', 'ш','щ','з','х','ъ','ф','в','п','р','л','д','ж','ч','с','м','т','ь','б'];
+    result = result.filter((word) => {
+      wordConsonantsCounter = word.split('').reduce((prevValue, value) => {
+        if (consonantsArray.indexOf(value) + 1) {
+          return prevValue+1;
+        }
+        return prevValue;
+      }, 0);
+      return wordConsonantsCounter === consonantsCount;
+    })
   }
   textArea.innerHTML = result.join("\n");
 }
