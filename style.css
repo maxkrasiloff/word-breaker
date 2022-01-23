@@ -6,6 +6,7 @@ body {
   flex-direction: column;
   min-height: 100vh;
   width: 100%;
+  transition: 0.3s;
 }
 
 .main-section {
@@ -15,6 +16,9 @@ body {
 header {
   border-bottom: 1px solid #ccc;
   box-shadow: 0 0 0.5rem #3333;
+  top: 0;
+  position: sticky;
+  background-color: #fff;
 }
 
 .logo {
@@ -37,6 +41,7 @@ footer {
   width: 1rem;
   font-size: 1rem;
   text-align: center;
+  padding: 0.5rem 0.5rem;
 }
 
 #filteredTextarea {
@@ -54,4 +59,46 @@ footer a {
   header, footer, .main-section {
     padding: 1rem;
   }
+}
+
+input, textarea {
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  border: 1px solid #aaa;
+  transition: 0.3s;
+  font-size: 1rem;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  box-shadow: 0 0 0.25rem #7777ff;
+}
+
+button {
+  border: 1px solid #6666cc;
+  background-color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+  color: #333;
+  text-shadow: 0 1px 1px #777;
+  transition: 0.3s;
+}
+
+button:hover {
+  cursor: pointer;
+  box-shadow: 0 0 0.25rem #7777ff;
+}
+
+#resultBlock {
+  visibility: hidden;
+  transition: 0.3s;
+  opacity: 0;
+  height: 0;
+}
+
+#resultBlock.show {
+  visibility: visible;
+  opacity: 1;
+  height: auto;
 }

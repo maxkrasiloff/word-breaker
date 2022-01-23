@@ -15,6 +15,7 @@ const findAllSymbols = () => {
   const excludeSpecSymbols = document.getElementById('excludeSpecSymbols').checked;
   const excludeShorts = document.getElementById('excludeShorts').checked;
   const consonantsCount = +document.getElementById('consonants').value;
+  const resultBlock = document.getElementById('resultBlock');
   let result = dataset;
   
   if (excludeShorts) {
@@ -69,6 +70,7 @@ const findAllSymbols = () => {
     })
   }
   textArea.innerHTML = result.join("\n");
+  resultBlock.classList.add('show');
 }
 
 function findSymbol(word, symbol, position) {
